@@ -1,8 +1,9 @@
 .PHONY: all
-all: bin dotfiles ## Installs the bin directory files and the dotfiles.
+all: bin dotfiles etc ## Installs the bin directory files and the dotfiles.
 
 .PHONY: bin
 bin: ## Installs the bin directory files.
+	mkdir -p $(HOME)/local/bin
 	# add aliases for things in bin
 	for file in $(shell find $(CURDIR)/bin -type f -not -name "*-backlight" -not -name ".*.swp"); do \
 		f=$$(basename $$file); \
@@ -19,6 +20,16 @@ dotfiles: ## Installs the dotfiles.
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
 	git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
+
+.PHONY: update
+update: ## Updates all plugins
+		git submodule update --init --recursive
+		git submodule foreach git pull --recurse-submodules origin master
+
+.PHONY: etc
+etc: ## Installs the etc directory files
+	mkdir -p $(HOME)/local/etc
+	ln -fsn $(CURDIR)/utils/liquidprompt/liquidprompt $(HOME)/local/etc/liquidprompt
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
