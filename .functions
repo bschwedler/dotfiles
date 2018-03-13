@@ -2,6 +2,6 @@
 # .functions
 
 function dbl() {
-    docker build --tag ${DOCKER_REG}/$1:local .;
+    docker build --tag "${DOCKER_REG}/${1}:local" .;
 }
 
