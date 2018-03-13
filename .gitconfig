@@ -1,0 +1,67 @@
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+
+[diff]
+    tool = vimdiff
+
+[alias]
+    # SVN-like aliases
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+
+    # Checkout a new branch
+    cob = checkout -b
+
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    # Stolen from Scott Chacon
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local --color
+    # View names of files changed in commits
+    logn = log --name-status --color
+    # View dates of the commit. with author information
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]|[%cn]" --decorate --date=short
+    # view times of commit with author information
+    lt = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]|[%cn]" --decorate --date=iso
+    # Extra-colorfull decorated history of commits
+    grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(yellow)%h%C(reset) - %C(bold cyan)%aD%C(dim blue) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(green)%d%C(reset)%n %C(white)%s%C(reset)\"
+
+    # Show verbose output about tags, branches, or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    # I really broke it.  Take me back!!!
+    fubar = reset --hard HEAD
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = green reverse
+    local = cyan
+    remote = blue
+[color "diff"]
+    meta = white bold
+    frag = magenta bold
+    old = blue
+    new = green
+[color "status"]
+    # added = yellow
+    # changed = green
+    # untracked = cyan
+
+[credential]
+    helper = cache
+
+[include]
+    # Used to override default name and email etc.
+    path = ~/.gitlocal
+[pull]
+    rebase = true

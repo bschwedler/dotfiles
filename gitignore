@@ -1,0 +1,20 @@
+# Compiled files
+*.o
+*.so
+*.pyc
+*~
+*.swp
+.svn/
+.idea/
+CVS/
+# session
+Session.vim
+# temporary
+.netrwhist
+# Mac OSX
+.DS_Store
+# IntelliJ
+*.iml
+# GEM Bundler
+.bundler/
+

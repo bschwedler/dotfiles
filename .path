@@ -1,0 +1,21 @@
+#!/bin/bash
+# .path
+
+########################################################################
+# If on OSX and GNU coreutils is installed, use them over the BSD variants
+if [[ ( -d /usr/local/opt/coreutils/libexec/gnubin ) && ( ! "$PATH" =~ (^|:)"/usr/local/opt/coreutils/libexec/gnubin"(:|$) ) ]] ; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
+if [[ ( -d /usr/local/opt/coreutils/libexec/gnuman ) && ( ! "$MANPATH" =~ (^|:)"/usr/local/opt/coreutils/libexec/gnuman"(:|$) ) ]] ; then
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
+if [[ -d /usr/local/share/chruby ]]; then
+    source /usr/local/share/chruby/chruby.sh
+    source /usr/local/share/chruby/auto.sh
+fi
+
+if [[ ! "$PATH" =~ (^|:)"${HOME}/local/bin"(:|$) ]] ; then
+    export PATH=${HOME}/local/bin:$PATH
+fi
+

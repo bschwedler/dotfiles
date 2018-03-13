@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ ! -z "$PS1" ]; then
+    source ~/local/etc/liquidprompt
+fi

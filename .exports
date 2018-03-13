@@ -1,0 +1,26 @@
+#!/bin/bash
+
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X";
+
+export TZ=CST6CDT;
+
+export HISTCONTROL=ignoreboth:erasedups;
+export HISTSIZE=10000;
+export HISTFILESIZE=$HISTSIZE;
+export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h";
+
+export EDITOR=vim;
+
+export GITROOT=~/local/git;
+
+
+export WATCHER_RAM_SIZE=4096
+export WATCHER_NUM_NODES=1
+export AGENT_FOLDER="/usr/local/elasticbox"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+

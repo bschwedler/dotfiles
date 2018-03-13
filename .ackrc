@@ -1,0 +1,7 @@
+# .ackrc
+
+--ignore-dir=node_modules/
+--ignore-dir=vendor/bundle/
+--ignore-dir=.bundler/
+--ignore-dir=.idea/
+
