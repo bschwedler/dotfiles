@@ -13,5 +13,7 @@ Session.vim
 .netrwhist
 *~
 
+cache/
+
 .extra
 
