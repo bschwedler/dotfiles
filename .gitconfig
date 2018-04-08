@@ -16,6 +16,8 @@
     cob = checkout -b
 
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    # Always check for updates on remote when force pushing
+    pushf = push --force-with-lease
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
