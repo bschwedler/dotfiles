@@ -3,7 +3,9 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
+    *i*)
+      source ~/.bash_profile
+      ;;
     *) return;;
 esac
 
