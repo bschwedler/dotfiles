@@ -1,0 +1,36 @@
+{
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Solarized Dark",
+
+    "editor.fontSize": 11,
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.keymap": "alternate",
+    "gitlens.codeLens.scopes": [
+        "blocks",
+        "containers",
+        "document"
+    ],
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.highlight.locations": [
+        "overview",
+        "gutter",
+        "line"
+    ],
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line"
+}
