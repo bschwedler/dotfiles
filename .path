@@ -10,6 +10,14 @@ if [[ ( -d /usr/local/opt/coreutils/libexec/gnuman ) && ( ! "$MANPATH" =~ (^|:)"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+# Add /usr/local paths
+if [[ ! "$PATH" =~ (^|:)"/usr/local/sbin"(:|$) ]] ; then
+    export PATH="/usr/local/sbin:$PATH"
+fi
+if [[ ! "$PATH" =~ (^|:)"/usr/local/bin"(:|$) ]] ; then
+    export PATH="/usr/local/bin:$PATH"
+fi
+
 # shellcheck disable=SC1091
 if [[ -d /usr/local/share/chruby ]]; then
     source /usr/local/share/chruby/chruby.sh
