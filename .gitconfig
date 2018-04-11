@@ -40,6 +40,9 @@
 
     # I really broke it.  Take me back!!!
     fubar = reset --hard HEAD
+    # Remove branches that have already been merged with master
+    # a.k.a. ‘delete merged’
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
 [color]
     branch = auto
@@ -65,5 +68,14 @@
 [include]
     # Used to override default name and email etc.
     path = ~/.gitlocal
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
 [pull]
     rebase = true
+[fetch]
+    prune = true
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
