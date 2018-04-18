@@ -18,7 +18,9 @@ dotfiles: ## Installs the dotfiles.
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
-	git update-index --skip-worktree $(CURDIR)/.gitconfig;
+	# If username and email are in.gitconfig, uncoment.
+	# Uses ~/.gitlocal by default
+	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 	uname | grep -i Linux && ln -sfn $(CURDIR)/conf/vscode_settings.json $(HOME)/.config/Code/User/settings.json || true;
 	uname | grep -i Darwin && ln -sfn $(CURDIR)/conf/vscode_settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json || true;
