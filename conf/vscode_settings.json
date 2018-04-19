@@ -1,6 +1,5 @@
 {
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Solarized Dark",
 
     "editor.fontSize": 11,
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
@@ -8,7 +7,14 @@
         80,
         120
     ],
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "bounded",
+
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
+
+    "git.confirmSync": false,
+
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -21,8 +27,6 @@
     },
     "gitlens.keymap": "alternate",
     "gitlens.codeLens.scopes": [
-        "blocks",
-        "containers",
         "document"
     ],
     "gitlens.blame.avatars": false,
@@ -32,5 +36,14 @@
         "line"
     ],
     "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line"
+    "gitlens.hovers.currentLine.over": "line",
+
+    "python.venvFolders": [
+      "envs",
+      ".pyenv",
+      ".direnv",
+      "~/.virtualenvs"
+    ],
+
+    "ansibleVault.executable": "/usr/local/bin/ansible-vault"
 }
