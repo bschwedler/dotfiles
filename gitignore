@@ -17,4 +17,5 @@ Session.vim
 *.iml
 # GEM Bundler
 .bundler/
-
+# Backup files
+*.bak
