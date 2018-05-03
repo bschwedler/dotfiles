@@ -38,6 +38,10 @@
     branches = branch -a
     remotes = remote -v
 
+    # Ingnore whitespace on diff and apply
+    dnw = diff --ignore-space-at-eol
+    anw = !git diff -U0 --ignore-space-at-eol --no-color -- \"$@\" | git apply --cached --unidiff-zero "#"
+
     # I really broke it.  Take me back!!!
     fubar = reset --hard HEAD
     # Remove branches that have already been merged with master
@@ -79,3 +83,6 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+[commit]
+    verbose = true
+
