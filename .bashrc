@@ -4,6 +4,7 @@
 # If not running interactively, don't do anything
 case $- in
     *i*)
+      # shellcheck source=.bash_profile disable=SC1091
       source ~/.bash_profile
       ;;
     *) return;;
