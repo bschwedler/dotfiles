@@ -45,5 +45,10 @@
       "~/.virtualenvs"
     ],
 
-    "ansibleVault.executable": "/usr/local/bin/ansible-vault"
+    "ansibleVault.executable": "/usr/local/bin/ansible-vault",
+
+    "ruby.lint": {
+      "rubocop": true,
+    }
+
 }
