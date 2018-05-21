@@ -38,6 +38,9 @@
     branches = branch -a
     remotes = remote -v
 
+    # List authors
+    authors = shortlog -e -s -n
+
     # Ingnore whitespace on diff and apply
     dnw = diff --ignore-space-at-eol
     anw = !git diff -U0 --ignore-space-at-eol --no-color -- \"$@\" | git apply --cached --unidiff-zero "#"
