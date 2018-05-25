@@ -49,6 +49,6 @@
 
     "ruby.lint": {
       "rubocop": true,
-    }
-
+    },
+    "gitlens.historyExplorer.enabled": true
 }
