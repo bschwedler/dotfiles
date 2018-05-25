@@ -6,6 +6,12 @@
     tool = vimdiff
 
 [alias]
+    # Some borrowed, modified, or otherwise stolen from the following
+    # https://github.com/jessfraz/dotfiles/blob/master/.gitconfig
+    # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+    # https://www.youtube.com/watch?v=ZDR433b0HJY
+    # https://gist.github.com/robmiller/6018582
+
     # SVN-like aliases
     st = status
     ci = commit
@@ -14,6 +20,17 @@
 
     # Checkout a new branch
     cob = checkout -b
+
+    alias=!git config -l | grep ^alias | cut -c 7- | sort
+
+    # Get the current branch name (not so useful in itself, but used in
+    # other aliases)
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!git push -u origin $(git branch-name)"
+    # Delete the remote version of the current branch
+    unpublish = "!git push origin :$(git branch-name)"
 
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
     # Always check for updates on remote when force pushing
