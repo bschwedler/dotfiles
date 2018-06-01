@@ -50,5 +50,6 @@
     "ruby.lint": {
       "rubocop": true,
     },
-    "gitlens.historyExplorer.enabled": true
+    "gitlens.historyExplorer.enabled": true,
+    "window.zoomLevel": 0
 }
