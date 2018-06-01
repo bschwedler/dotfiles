@@ -17,6 +17,11 @@ dotfiles: ## Installs the dotfiles.
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
+	# add files stored in ~/.config/
+	for file in $(shell find $(CURDIR)/.config); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/.config/$$f; \
+	done; \
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
 	# If username and email are in.gitconfig, uncoment.
 	# Uses ~/.gitlocal by default
