@@ -29,6 +29,7 @@ dotfiles: ## Installs the dotfiles.
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 	uname | grep -i Linux && ln -sfn $(CURDIR)/conf/vscode_settings.json $(HOME)/.config/Code/User/settings.json || true;
 	uname | grep -i Darwin && ln -sfn $(CURDIR)/conf/vscode_settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json || true;
+	uname | grep -i Darwin && ln -sfn $(CURDIR)/conf/vscode_settings.json $(HOME)/Library/Application\ Support/Code\ -\ Insiders/User/settings.json || true;
 
 .PHONY: update
 update: ## Updates all plugins
