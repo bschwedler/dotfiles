@@ -17,7 +17,7 @@ source /etc/bashrc
 shopt -s checkwinsize
 
 # enable color support of ls and also add handy aliases
-if which dircolors > /dev/null 2>&1 ; then
+if command -v dircolors > /dev/null 2>&1 ; then
     # shellcheck disable=SC2015
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
