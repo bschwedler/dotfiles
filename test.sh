@@ -5,15 +5,13 @@ set -o pipefail
 ERRORS=()
 
 # find all executables and run `shellcheck`
-for f in $(find . -type f -not -iwholename '*.git*' -not -iwholename './utils/*' -not -name "yubitouch.sh" | sort -u); do
-	if file "$f" | grep --quiet shell; then
-		{
-			shellcheck "$f" && echo "[OK]: sucessfully linted $f"
-		} || {
-			# add to errors
-			ERRORS+=("$f")
-		}
-	fi
+for f in $(./files.sh) ; do
+	{
+		shellcheck "$f" && echo "[OK]: sucessfully linted $f"
+	} || {
+		# add to errors
+		ERRORS+=("$f")
+	}
 done
 
 if [ ${#ERRORS[@]} -eq 0 ]; then

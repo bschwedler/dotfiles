@@ -5,5 +5,5 @@ workflow "Tests" {
 
 action "Shellcheck" {
    uses = "actions/bin/shellcheck@master"
-   args = "$(./lint.sh)"
+   args = "$(./files.sh)"
  }
