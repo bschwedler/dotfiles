@@ -28,9 +28,12 @@
 # Remember that most features come with their corresponding colors,
 # see the README.
 
+LP_PS1_PREFIX="\n"
+LP_MARK_PREFIX="\n"
+
 # add time, jobs, load and battery
 #LP_PS1="${LP_PS1_PREFIX}${LP_TIME}${LP_BATT}${LP_LOAD}${LP_JOBS}"
-LP_PS1="\n${LP_PS1_PREFIX}${LP_TIME}${LP_LOAD}${LP_JOBS}"
+LP_PS1="${LP_PS1_PREFIX}${LP_TIME}${LP_LOAD}${LP_JOBS}"
 # add user, host and permissions colon
 LP_PS1="${LP_PS1}${LP_BRACKET_OPEN}${LP_USER}${LP_HOST}${LP_PERM}"
 
@@ -42,7 +45,7 @@ LP_PS1="${LP_PS1}${LP_RUNTIME}${LP_ERR}"
 # Add VCS infos
 # If root, the info has not been collected unless LP_ENABLE_VCS_ROOT
 # is set.
-LP_PS1="${LP_PS1}\n${LP_VCS}"
+LP_PS1="${LP_PS1}${LP_VCS}"
 
 # add mark
 LP_PS1="${LP_PS1}${LP_MARK_PREFIX}${LP_MARK}${LP_PS1_POSTFIX}"
