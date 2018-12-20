@@ -9,7 +9,7 @@ alias mv='mv -i'
 
 ########################################################################
 # Program aliases
-alias pwgen='for i in {1..32}; do pwgen -1cny $(shuf -i 12-24 -n 1) 1; done'
+alias pwgen='for i in {1..32}; do pwgen -1 -s -cny $(shuf -i 16-24 -n 1) 1; done'
 alias apg='pwgen; echo; echo "========"; echo "DOPE! Retrain your fingers"; echo "========"; echo'
 
 alias grep="grep --color=auto"
