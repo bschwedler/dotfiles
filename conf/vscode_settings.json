@@ -73,5 +73,13 @@
 
     "window.zoomLevel": 0,
     "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true
+    "gitlens.views.lineHistory.enabled": true,
+    "editor.minimap.enabled": false,
+    "html.format.wrapLineLength": 0,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.insertFinalNewline": true,
+    "python.jediEnabled": false,
+    "go.formatTool": "goimports",
+    "gitlens.blame.heatmap.location": "left"
 }
