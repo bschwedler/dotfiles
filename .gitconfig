@@ -106,3 +106,5 @@
 [commit]
     verbose = true
 
+[rebase]
+    autoStash = true
