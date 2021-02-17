@@ -29,3 +29,7 @@ if [ -f /usr/libexec/java_home ]; then
     export JAVA_HOME
 fi
 
+if [ "$(uname)" == "Darwin" ]; then
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+

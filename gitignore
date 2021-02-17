@@ -19,3 +19,5 @@ Session.vim
 .bundler/
 # Backup files
 *.bak
+# pyenv
+.python-version

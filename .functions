@@ -5,3 +5,7 @@ function dbl() {
     docker build --tag "${DOCKER_REG}/${1}:local" .;
 }
 
+
+function jwt_parse() {
+    jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
+}
