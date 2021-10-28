@@ -2,6 +2,8 @@
     excludesfile = ~/.gitignore
     editor = vim
 
+[init]
+    defaultBranch = main
 [diff]
     tool = vimdiff
 
