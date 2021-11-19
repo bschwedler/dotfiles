@@ -19,8 +19,10 @@
       "**/vendor/bundle/**": true,
     },
 
+    "editor.defaultFormatter": null,
     "editor.fontSize": 11,
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnSaveMode": "modifications",
     "editor.minimap.enabled": false,
     "editor.suggestSelection": "first",
     "editor.rulers": [
@@ -34,8 +36,6 @@
 
     "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
-
-    "window.zoomLevel": 0,
 
     "git.confirmSync": false,
 
@@ -59,6 +59,7 @@
         "gutter",
         "line"
     ],
+    "gitlens.blame.toggleMode": "window",
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.historyExplorer.enabled": true,
@@ -80,18 +81,11 @@
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
     "ruby.intellisense": "rubyLocate",
-    "ruby.lint": {
-      "rubocop": {
-        "useBundler": true
-      }
+    "ruby.rubocop": {
+      "onSave": true,
+      "useBundler": true
     },
     "ruby.format": "rubocop",
-    "solargraph.useBundler": true,
+    "solargraph.useBundler": true
 
-    "go.formatTool": "goimports",
-
-    "html.format.wrapLineLength": 0,
-
-
-    "java.requirements.JDK11Warning": true
 }
