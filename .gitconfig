@@ -98,6 +98,8 @@
     whitespace = fix
 [pull]
     rebase = true
+[rebase]
+    autoStash = true
 [fetch]
     prune = true
 [merge]
@@ -106,5 +108,3 @@
 [commit]
     verbose = true
 
-[rebase]
-    autoStash = true
