@@ -21,6 +21,7 @@ alias base64="base64 --wrap=0"
 alias g="git"
 alias h="history"
 alias k="kubectl"
+alias tf="terraform"
 
 alias handbrakedefaults='HandBrakeCLI -e x264 -q 20 -E faac -t 1 -s 1 -i /dev/sr0'
 

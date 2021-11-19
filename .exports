@@ -20,10 +20,6 @@ export GIT_DUET_CO_AUTHORED_BY=1;
 
 export HELM_HOME=~/.helm
 
-export WATCHER_RAM_SIZE=4096
-export WATCHER_NUM_NODES=1
-export AGENT_FOLDER="/usr/local/elasticbox"
-
 if [ -f /usr/libexec/java_home ]; then
     JAVA_HOME=$(/usr/libexec/java_home)
     export JAVA_HOME
