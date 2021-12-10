@@ -68,7 +68,7 @@
     "gitlens.blame.heatmap.location": "left",
 
     "python.jediEnabled": false,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "python.venvFolders": [
       "envs",
       ".pyenv",
@@ -86,6 +86,14 @@
       "useBundler": true
     },
     "ruby.format": "rubocop",
-    "solargraph.useBundler": true
+    "solargraph.useBundler": true,
+
+    "vim.handleKeys": {
+      "<C-d>": true,
+      "<C-c>": false,
+      "<C-v>": false,
+      "<C-x>": false,
+      "<C-z>": false
+    },
 
 }
