@@ -20,7 +20,7 @@
     },
 
     "editor.defaultFormatter": null,
-    "editor.fontSize": 11,
+    "editor.fontSize": 12,
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.formatOnSaveMode": "modifications",
     "editor.minimap.enabled": false,
@@ -93,7 +93,8 @@
       "<C-c>": false,
       "<C-v>": false,
       "<C-x>": false,
-      "<C-z>": false
+      "<C-z>": false,
+      "<C-f>": false,
     },
 
 }
