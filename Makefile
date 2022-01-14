@@ -13,14 +13,14 @@ bin: ## Installs the bin directory files.
 .PHONY: dotfiles
 dotfiles: ## Installs the dotfiles.
 	# add aliases for dotfiles
-	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git"  -not -iwholename "$(CURDIR)/utils/*" -not -name ".*.swp" -not -name ".gnupg"); do \
+	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".config" -not -iwholename "$(CURDIR)/utils/*" -not -name ".*.swp" -not -name ".gnupg"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
 	# add files stored in ~/.config/
 	for file in $(shell find $(CURDIR)/.config); do \
 		f=$$(basename $$file); \
-		ln -sfn $$file $(HOME)/.config/$$f; \
+		ln -sfn $$file $(CURDIR)/.config/$$f $(HOME)/.config/$$f; \
 	done; \
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
 	# If username and email are in.gitconfig, uncoment.
