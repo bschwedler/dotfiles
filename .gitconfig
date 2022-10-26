@@ -61,8 +61,8 @@
     authors = shortlog -e -s -n
 
     # Ingnore whitespace on diff and apply
-    dnw = diff --ignore-space-at-eol
-    anw = !git diff -U0 --ignore-space-at-eol --no-color -- \"$@\" | git apply --cached --unidiff-zero "#"
+    dnw = !sh -c 'git diff --ignore-space-at-eol "$@"'
+    anw = !sh -c 'git diff -U0 --ignore-space-at-eol --no-color "$@" | git apply --cached --unidiff-zero -'
 
     # I really broke it.  Take me back!!!
     fubar = reset --hard HEAD
@@ -98,12 +98,14 @@
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
+[fetch]
+    prune = true
 [pull]
     rebase = true
 [rebase]
     autoStash = true
-[fetch]
-    prune = true
+[rerere]
+    enabled = true
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
