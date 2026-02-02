@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ########################################################################
 # Shell aliases
 alias ll='ls -l'
@@ -9,8 +7,7 @@ alias mv='mv -i'
 
 ########################################################################
 # Program aliases
-alias pwgen='for i in {1..32}; do pwgen -1 -cny $(shuf -i 24-32 -n 1) 1; done'
-alias apg='pwgen; echo; echo "========"; echo "DOPE! Retrain your fingers"; echo "========"; echo'
+alias pwgen='PW_MIN=${PW_MIN:-24}; PW_MAX=${PW_MAX:-32}; for i in {1..32}; do pwgen -1 -cny $(shuf -i ${PW_MIN}-${PW_MAX} -n 1) 1; done'
 
 alias grep="grep --color=auto"
 alias wdiff="diff -y --color=auto --width=200"
@@ -18,38 +15,10 @@ alias wdiff="diff -y --color=auto --width=200"
 alias base64="base64 --wrap=0"
 
 # Command aliases
+alias v="vim"
 alias g="git"
+alias lg="lazygit"
 alias h="history"
 alias k="kubectl"
 alias tf="terraform"
-
-alias handbrakedefaults='HandBrakeCLI -e x264 -q 20 -E faac -t 1 -s 1 -i /dev/sr0'
-
-########################################################################
-# Get host information
-if [ "$(uname)" == "Darwin" ]; then
-    domain=$(hostname -f | cut -d'.' -f2-)
-else
-    domain=$(hostname -d)
-fi
-
-if [ "$domain" == "serenity" ]; then
-    alias mount_kaylee_media='sudo mount -t cifs //kaylee.serenity/Media /kaylee/media'
-    alias umount_kayle_media='sudo umount /kaylee/media'
-
-    alias mount_tablet='simple-mtpfs --device $(simple-mtpfs -l | grep "Nexus 4/10" | cut -d":" -f1) /mnt/tablet'
-    alias umount_tablet='fusermount -u /mnt/tablet'
-
-    alias mount_phone='simple-mtpfs --device $(simple-mtpfs -l | grep "SamsungGalaxy" | cut -d":" -f1) /mnt/phone'
-    alias umount_phone='fusermount -u /mnt/phone'
-
-
-    alias mount_mal_media='sudo mount -o mountproto=tcp -o noatime mal.serenity:/mal/media /mal/media'
-    alias umount_mal_media='sudo umount /mal/media'
-    alias mount_mal_share='sudo mount -o mountproto=tcp -o noatime mal.serenity:/mal/share /mal/share'
-    alias umount_mal_share='sudo umount /mal/share'
-
-    alias shuttle='ssh -p 3022 localhost'
-    alias shuttleX='ssh -X -p 3022 localhost'
-fi
-
+alias ts="tailscale"

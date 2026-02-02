@@ -20,19 +20,21 @@
     },
 
     "editor.defaultFormatter": null,
-    "editor.fontSize": 12,
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 11,
+    "editor.fontLigatures": true,
     "editor.formatOnSaveMode": "modifications",
-    "editor.minimap.enabled": false,
     "editor.suggestSelection": "first",
     "editor.rulers": [
         80,
-        120
+        100,
+        120,
+        160
     ],
     "editor.wordWrapColumn": 120,
-    "editor.wordWrap": "bounded",
-
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.wordWrap": "on",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnCommitCharacter": false,
 
     "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
@@ -67,34 +69,91 @@
     "gitlens.views.lineHistory.enabled": true,
     "gitlens.blame.heatmap.location": "left",
 
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "isort.args":["--profile", "black"],
     "python.jediEnabled": false,
     "python.languageServer": "Default",
     "python.venvFolders": [
-      "envs",
-      ".pyenv",
-      ".direnv",
-      "~/.virtualenvs"
+        ".venv",
+        "venv",
+        "envs",
+        ".pyenv",
+        ".direnv",
+        "~/.virtualenvs"
     ],
 
-    "ansibleVault.executable": "/usr/local/bin/ansible-vault",
-
-    "ruby.useBundler": true,
-    "ruby.useLanguageServer": true,
-    "ruby.intellisense": "rubyLocate",
-    "ruby.rubocop": {
-      "onSave": true,
-      "useBundler": true
-    },
-    "ruby.format": "rubocop",
-    "solargraph.useBundler": true,
-
     "vim.handleKeys": {
-      "<C-d>": true,
+      "<C-a>": false,
       "<C-c>": false,
+      "<C-d>": true,
+      "<C-f>": false,
+      "<C-k>": false,
+      "<C-n>": false,
+      "<C-p>": false,
       "<C-v>": false,
       "<C-x>": false,
+      "<C-y>": false,
       "<C-z>": false,
-      "<C-f>": false,
     },
+    "json.schemas": [],
 
-}
+    "go.lintOnSave": "file",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[go]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "file",
+      "editor.insertSpaces": false,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "go.docsTool": "gogetdoc",
+    "files.trimTrailingWhitespace": true,
+    "editor.inlineSuggest.enabled": true,
+    "[cpp]": {
+      "editor.tabSize": 3,
+      "editor.insertSpaces": true,
+      "editor.wordBasedSuggestions": false,
+      "editor.suggest.insertMode": "replace",
+      "editor.semanticHighlighting.enabled": true
+    },
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
+    "C_Cpp.vcFormat.space.insertAfterSemicolon": true,
+    "C_Cpp.vcFormat.indent.preserveWithinParentheses": true,
+
+    "github.copilot.enable": {
+      "quarto": false,
+      "*": true,
+      "yaml": true,
+      "plaintext": false,
+      "markdown": false,
+      "cpp": true
+    },
+    "files.associations": {
+      "Makefile.*": "makefile"
+    },
+    "quarto.mathjax.theme": "dark",
+    "editor.minimap.enabled": false,
+    "Lua.workspace.supportScheme": [
+      "file",
+      "default"
+    ],
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "gitlens.heatmap.locations": [
+      "gutter"
+    ],
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.heatmap.fadeLines": false,
+    "gitlens.heatmap.ageThreshold": 14,
+    "npm.keybindingsChangedWarningShown": true,
+    "hediet.vscode-drawio.resizeImages": null,

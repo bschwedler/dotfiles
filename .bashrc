@@ -32,8 +32,11 @@ fi
 ########################################################################
 # Python Setup
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     # shellcheck disable=SC1091
-    source /usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
+elif [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
+    # shellcheck disable=SC1091
+    source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 

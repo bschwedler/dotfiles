@@ -4,7 +4,7 @@ export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
 
 # Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X";
+export MANPAGER="less -X -r";
 
 export TZ=CST6CDT;
 
@@ -13,6 +13,9 @@ export HISTSIZE=10000;
 export HISTFILESIZE=$HISTSIZE;
 export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h";
 
+export CC=/usr/bin/gcc;
+export CXX=/usr/bin/g++;
+
 export EDITOR=vim;
 
 export GITROOT=~/local/git;
@@ -20,12 +23,4 @@ export GIT_DUET_CO_AUTHORED_BY=1;
 
 export HELM_HOME=~/.helm
 
-if [ -f /usr/libexec/java_home ]; then
-    JAVA_HOME=$(/usr/libexec/java_home)
-    export JAVA_HOME
-fi
-
-if [ "$(uname)" == "Darwin" ]; then
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
-
+export R_HOME=${HOME}/.R

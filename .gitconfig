@@ -6,6 +6,7 @@
     defaultBranch = main
 [diff]
     tool = vimdiff
+    colormoved = dimmed-zebra
 
 [alias]
     # Some borrowed, modified, or otherwise stolen from the following
@@ -19,6 +20,8 @@
     ci = commit
     br = branch
     co = checkout
+
+    aa = !git anw && git commit --amend
 
     # Checkout a new branch
     cob = checkout -b
@@ -102,6 +105,8 @@
     prune = true
 [pull]
     rebase = true
+[push]
+    autoSetupRemote = true
 [rebase]
     autoStash = true
 [rerere]
@@ -112,3 +117,7 @@
 [commit]
     verbose = true
 
+[credential "https://github.com"]
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper = !/usr/bin/gh auth git-credential
