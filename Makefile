@@ -17,6 +17,7 @@ dotfiles: ## Installs the dotfiles.
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
+	ln -sfn $(CURDIR)/zsh/brjs.zsh-theme $(HOME)/.oh-my-zsh/custom/themes/ ;
 	# add files stored in ~/.config/
 	for file in $(shell find $(CURDIR)/.config); do \
 		f=$$(basename $$file); \
